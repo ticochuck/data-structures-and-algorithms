@@ -77,9 +77,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  arr.toString();
-  arr.sort((a,b) => a.length > b.length);
-  return arr;
+  return arr.sort((a,b) => a.toString().length - b.toString().length);
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -117,37 +115,13 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   arr.sort((a,b) => {
-    if (a.lastName === b.lastName) {
-      arr.sort(a.lastName < b.lastName);
-    };
-    if (a.firstName === b.firstName) {
-      arr.sort((a2,b2) => a2.firstName > b2.firstName);
-      return arr;
-    } else {
-      arr.sort((a3,b3) => a3.lastName > b3.lastName);
-      return arr;
+    if ((a.lastName.toLowerCase() === b.lastName.toLowerCase()) && (a.firstName.toLowerCase() === b.firstName.toLowerCase())){
+      arr.sort((a,b) => a.age > b.age);
+    } else if (a.lastName.toLowerCase() === b.lastName.toLowerCase()) {
+      arr.sort((a,b) => a.firstName < b.firstName); 
     }
-
-
-    // if ((a.lastName === b.lastName) && (a.firstName === a.firstName)) {
-    //   arr.sort((a1,b1) => a1.age < b1.age);
-    //   return arr;
-    // } else if (a.lastName === b.lastName) {
-    //   arr.sort((a2,b2) => a2.firstName > b2.firstName);
-    //   return arr;
-    // } else {
-    //   arr.sort((a3,b3) => a3.lastName > b3.lastName);
-    //   return arr;
-    // }
-
-
-    // if (a.lastName < b.lastName) return 1;
-    // if (a.lastName > b.lastName) return -1;
-    // if (a.firstName < b.firstName) return 1;
-    // if (a.firstName > b.firstName) return -1;
-    // if (a.age < b.age) return 1;
-    // if (a.age > b.age) return -1;
-    // return arr;
+    arr.sort((a,b) => a.lastName < b.lastName);
+    return arr;
   });
 };
 
