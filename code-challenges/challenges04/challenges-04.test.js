@@ -26,11 +26,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let a = \b/[A-Z]/g;
-  let words = str.replace(a, (rawMatch, matchedThing, idx) => {
-    return idx === 0 ? rawMatch : matchedThing;
-  });
-  return words;
+  let startswithCap = /[A-Z][a-zA-Z]*/g;
+  return  str.match(startswithCap);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,10 +53,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  let checkforInt = /[0-9]/g;
+  let checkforInt = /^[Oo]ct(ober)?$/;
   return checkforInt.test(input);
-  let n = input.search("October", "Oct", "october", "oct");
-  return(n);
 };
 
 /* ------------------------------------------------------------------------------------------------
