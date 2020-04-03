@@ -26,8 +26,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let startswithCap = /[A-Z][a-zA-Z]*/g;
-  return  str.match(startswithCap);
+  return /[A-Z]+\w/.test(str) ? str.match(/[A-Z]+\w*/g) : [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +36,13 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let newCities = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].match(/^[A-J]\w*/g)) {
+      newCities.push(arr[i]);
+    }
+  }
+  return newCities;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +73,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  return str.match(/\w+\s/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +89,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  return str.replace(/[aeiouAEIOU]/g, '_' );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,7 +105,7 @@ Hint: All of these words end with the letters "ells".
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (str) => {
-  // Solution code here...
+  return str.match(/\w*ells\b/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
