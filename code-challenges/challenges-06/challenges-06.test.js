@@ -90,7 +90,7 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   let result = false;
-  Object.values(arr).forEach(object => {
+  Object.values(arr).forEach(object  => {
     object.name === character && object.children !== [] ? result = true : false;
   });
   return result;
@@ -105,13 +105,13 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  let result = false;
+  let result = [];
   Object.entries(arr).forEach(objects => {
-    if ((objects.name === characters) && (objects.children !== [])) {
-      result = true;
+    if (objects[1].name === character) {
+      return result = objects[1].children;
     }
   });
-  return result;
+  return result.length > 0 ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,12 +121,18 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  let countCharacters = 0;
+  let countCharacters = [];
+
   for (let i = 0; i < arr.length; i++ ) {
-    let temp = arr[i];
-    countCharacters += temp.length;
+    countCharacters.push(arr[i].name, arr[i].house);
+    if (arr[i].spouse !== null) {
+      countCharacters.push(arr[i].spouse);
+    }
+    if (arr[i].children !== []) {
+      countCharacters.push(arr[i].children);
+    }
   }
-  return countCharacters;
+  return countCharacters.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,7 +147,23 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+  arr.forEach(obj => {
+    let members = [];
+    members.push(obj.name);
+    if (obj.spouse !== null) {
+      members.push(obj.spouse);
+    }
+    if (obj.children !== []) {
+      obj.children.forEach( child => {
+        members.push(child);
+      });
+    }
+    let newObj = {
+      house: obj.house,
+      members: members.length,
+    };
+    sizes.push(newObj);
+  });
   return sizes;
 };
 
@@ -165,7 +187,23 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+  arr.forEach(obj => {
+    let members = [];
+    members.push(obj.name);
+    if ((obj.spouse !== null) && (!deceasedSpouses.includes(obj.spouse))) {
+      members.push(obj.spouse);
+    }
+    if (obj.children !== []) {
+      obj.children.forEach( child => {
+        members.push(child);
+      });
+    }
+    let newObj = {
+      house: obj.house,
+      members: members.length,
+    };
+    survivors.push(newObj);
+  });
   return survivors;
 };
 
