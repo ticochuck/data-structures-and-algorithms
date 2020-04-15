@@ -78,9 +78,18 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  for (let i = 0; i < gruffaloCrumble.ingredients.length; i++) {
-    result.push(gruffaloCrumble.ingredients[i].slice(3,5));
-    result.slice(2);
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    if (recipe.ingredients[i].includes('medium')) {
+      result.push(gruffaloCrumble.ingredients[i].slice(15,23));
+    } else if (recipe.ingredients[i].includes('pounds')) {
+      result.push(gruffaloCrumble.ingredients[i].slice(9,20));
+    } else if (recipe.ingredients[i].includes('cups')) {
+      result.push(gruffaloCrumble.ingredients[i].slice(8,21));
+    } else if (recipe.ingredients[i].includes('gallons')) {
+      result.push(gruffaloCrumble.ingredients[i].slice(10,26));
+    } else {
+      result.push(gruffaloCrumble.ingredients[i].slice(8,21));
+    }
   }
   return result;
 };
@@ -95,14 +104,9 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  
-  for (let i = 0; i < gruffaloCrumble.ingredients.length; i++) {
-    result.push(gruffaloCrumble.ingredients);
-    result.split('');
-    result.push(gruffaloCrumble.ingredients[i].slice(2));
-    // gruffaloCrumble.ingredients.split('');
-    // result.slice(2);
-  }
+  recipe.ingredients.forEach(val => {
+    result.push(val.split(' ').slice(2).join(' '));
+  });
   return result;
 };
 
@@ -118,10 +122,10 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  for (let i = 0; i < gruffaloCrumble.steps.length; i++) {
-    recipe.steps.split('');
-    result.push(recipe.steps[i].slice(1));
-  }
+  recipe.steps.forEach(verb => {
+    let pos = verb.indexOf(' ', 1);
+    result.push(verb.slice(0 ,pos));
+  });
   return result;
 };
 
@@ -139,9 +143,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = arr.length; i >= 0; i--) {
     if (arr[i] % 2 === 0) {
-      arr.filter(i, 1);
+      arr.splice(i, 1);
     }
   }
   return arr;
@@ -180,10 +184,7 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 ------------------------------------------------------------------------------------------------ */
 
 const totalSumCSV = (str) => {
-  let total = 0;
-  str.split('');
-  for 
-  return total;
+  
 };
 
 
