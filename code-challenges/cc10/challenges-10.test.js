@@ -12,7 +12,11 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let times = input.reduce((total, val) => {
+    val.filter(number => number === target ? total++ : 0);
+    return total;
+  }, 0);
+  return times;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +30,11 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let sumArr = input.reduce( (total, val) => {
+    val.filter(number => total += number);
+    return total;
+  }, 0);
+  return sumArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
