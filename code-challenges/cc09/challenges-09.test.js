@@ -9,7 +9,11 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  let elements = arr.reduce( (accumulator, val, idx) => {
+    accumulator++;
+    return accumulator;
+  });
+  return elements;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +73,11 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  let namesArr = arr.reduce((name, val, idx) => {
+    name[idx] = val.name;
+    return name;
+  }, []);
+  return namesArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +89,11 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  let arr = str.split('');
+  let reversedStr = arr.reduce( (newString, currentLetter) => {
+    return currentLetter + newString;
+  }, '');
+  return reversedStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,7 +146,11 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  let totalChildren =  arr.reduce((total, val, idx) => {
+    total.push(val.children);
+    return total;
+  }, []);
+  return totalChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,7 +162,11 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let avgArr = arr.reduce ((avg, value, idx) => {
+    avg = avg + value;
+    return avg;
+  },0);
+  return avgArr / arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -167,7 +187,13 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  let primeNumbers = arr.reduce( (num, val, idx) => {
+    if (isPrime(val) === true) {
+      num++;
+    }
+    return num;
+  }, 0);
+  return primeNumbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -210,7 +236,12 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  let match = arr.reduce( (matched, obj, idx) => {
+    if (statName === obj.name) {
+      matched = obj.stat;
+    }
+    return match;
+  }, {});
 };
 
 /* ------------------------------------------------------------------------------------------------
