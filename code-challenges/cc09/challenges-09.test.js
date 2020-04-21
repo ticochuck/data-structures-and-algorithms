@@ -146,10 +146,13 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  let totalChildren =  arr.reduce((total, val, idx) => {
-    total.push(val.children);
+  let totalChildren =  arr.reduce((total, val) => {
+    if (val.children !== undefined) {
+      let kids = val.children.length;
+      total += kids;
+    }
     return total;
-  }, []);
+  }, 0);
   return totalChildren;
 };
 
@@ -238,10 +241,12 @@ const snorlaxData = {
 const extractStat = (statName, arr) => {
   let match = arr.reduce( (matched, obj, idx) => {
     if (statName === obj.name) {
-      matched = obj.stat;
+      matched += obj.stat;
+    } else {
+      matched += false;
     }
-    return match;
-  }, {});
+  },{});
+  return match;
 };
 
 /* ------------------------------------------------------------------------------------------------
