@@ -14,17 +14,22 @@ Return the array of the total number of cookies sold per hour for all of the sto
 
 const hoursOpen = ['9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.', '8 p.m.'];
 
-const firstPike = [17, 18, 23, 24, 24, 12, 13, 27, 30, 20, 24, 18];
-const seaTac = [26, 5, 5, 59, 23, 39, 38, 20, 30, 7, 59, 43];
-const seattleCenter = [7, 14, 19, 22, 15, 4, 23, 27, 28, 23, 1, 29];
-const capHill = [5, 85, 58, 51, 50, 13, 33, 32, 47, 94, 31, 62];
-const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
+const firstPike =     [17, 18, 23,  24,  24, 12, 13, 27,  30,  20, 24, 18];
+const seaTac =        [26, 5,  5,   59,  23, 39, 38, 20,  30,  7,  59, 43];
+const seattleCenter = [ 7, 14, 19,  22,  15, 4,  23, 27,  28,  23, 1,  29];
+const capHill =       [ 5, 85, 58,  51,  50, 13, 33, 32,  47,  94, 31, 62];
+const alkiBeach =     [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  let hourlySales = [];
+  let acum = 0;
+  for (let i = 0; i < hoursOpen.length; i++) {
+    acum = firstPike[i] + seaTac[i] + seattleCenter[i] + capHill[i] + alkiBeach[i];
+    hourlySales.push(acum);
+  }
+  return hourlySales;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,7 +43,14 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let hourlySales = [];
+  data.forEach((hour , idx)=> {
+    hourlySales.push( {
+      sales: `${hour} cookies`,
+      time: hours[idx],
+    });
+  });
+  return hourlySales;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +72,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,7 +94,7 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  return board[row][col] === '#' ? 'hit'  : 'miss';
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,9 +106,14 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let something = 1;
+  for(let i = 0; i < numbers.length; i++) {
+    for(let j = 0; j < numbers[i].length; j++) {
+      something *= numbers[i][j];
+    }
+  }
+  return something;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
