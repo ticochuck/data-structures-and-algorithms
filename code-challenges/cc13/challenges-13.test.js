@@ -9,7 +9,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(thing => {
+    newArr.push(thing.charAt(0));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,7 +25,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(thing => {
+    if (thing.includes(':)')) {
+      newArr.push(thing);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,8 +43,10 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  return arr.map( phoneNumber => `${phoneNumber.substring(1,4)}${phoneNumber.substring(6, 9)}${phoneNumber.substring(10)}`);
+
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -45,7 +57,7 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('').filter( (letter, index) => index % 2 === 1).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +67,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every((string) => string.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,7 +77,7 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.filter(str => str.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +87,7 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  return arr.every((string) => string.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,7 +103,13 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  // for (let i = 0; i < arr.length; i++) {
+  //   for (let j = 0; j < arr.length; j++) {
+  //     if (arr[i][j].includes('Brook')) {
+  //       arr.splice(j);
+  //     }
+  //   }
+  // return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
