@@ -9,7 +9,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map(element => element.charAt(0).toUpperCase() + element.slice(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +84,13 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(element => {
+    if (element.mass > 77) {
+      newArr.push(element.name);
+    }
+  });
+  return newArr.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +108,15 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a,b) => {
+    if (a[property] < b[property]) {
+      return -1;
+    } else if (a[property] > b[property]) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +132,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+ return url.includes('https://');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,7 +155,23 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  for (let i = 0; i < board.length; i ++) {
+    let won = true;
+    for (let j = 0; j < board.length; j ++) {
+      if (board[i[j]] === 'X' ) {
+        won = true;
+      } else {
+        won = false;
+      }
+    }
+    if ((board[i][0] === 'X') && (board[i][1] === 'X') && (board[i][2] === 'X')) {
+      won = true;
+    } else {
+      won = false;
+    }
+    return won;
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
