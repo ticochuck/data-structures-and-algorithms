@@ -64,7 +64,7 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  arr.sort((a,b) => a.price > b.price);
+  arr.sort((a,b) => a.price - b.price);
   return arr;
 };
 
@@ -99,7 +99,7 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  arr.sort((a,b) => a.lastName > b.lastName);
+  arr.sort((a,b) => a.lastName > b.lastName ? 1 : (a.lastName < b.lastName ? -1 : 0));
   return arr;
 };
 
@@ -115,14 +115,26 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   arr.sort((a,b) => {
-    if ((a.lastName.toLowerCase() === b.lastName.toLowerCase()) && (a.firstName.toLowerCase() === b.firstName.toLowerCase())){
-      arr.sort((a,b) => a.age > b.age);
-    } else if (a.lastName.toLowerCase() === b.lastName.toLowerCase()) {
-      arr.sort((a,b) => a.firstName < b.firstName); 
+    if (a.lastName.toLowerCase() < b.lastName.toLowerCase()) {
+      return -1;
     }
-    arr.sort((a,b) => a.lastName < b.lastName);
-    return arr;
+    if (a.firstName.toLowerCase() > b.lastName.toLowerCase()) {
+      return 1;
+    }
+    if (a.firstName.toLowerCase() < b.firstName.toLowerCase()) {
+      return -1;
+    }
+    if (a.firstName.toLowerCase() > b.firstName.toLowerCase()) {
+      return 1;
+    }
+    if (a.age < b.age) {
+      return -1;
+    }
+    if (a.age > b.age) {
+      return 1;
+    }
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
