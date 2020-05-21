@@ -131,7 +131,17 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let weekday = 0;
+  let sumTemp = 0;
+  let avgtemp = 0;
+  for (let i = 0; i < weather.length; i++) {
+    for (let j = 0; j < weather[i].length; j++) {
+      weekday++;
+      sumTemp += weather[i][j];
+    }
+  }
+  avgtemp = sumTemp / weekday;
+  return avgtemp;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +162,21 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let lowestTemp = 71;
+  let avgtemp = 0;
+  for (let i = 0; i < weather.length; i++) {
+    let weekday = 0;
+    let sumTemp = 0;
+    for (let j = 0; j < weather[i].length; j++) {
+      weekday++;
+      sumTemp += weather[i][j];
+    }
+    avgtemp = sumTemp / weekday;
+    if (avgtemp < lowestTemp) {
+      lowestTemp = avgtemp;
+    }
+  }
+  return lowestTemp;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,7 +192,18 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  let valuesSum = [];
+  let rows = str.split('\n');
+  rows.forEach(row => {
+    let acc = 0;
+    let columns = row.split(',');
+    columns.forEach(column => {
+      let value = parseInt(column);
+      acc += value;
+    });
+    valuesSum.push(acc);
+  });
+  return valuesSum;
 };
 
 /* ------------------------------------------------------------------------------------------------
