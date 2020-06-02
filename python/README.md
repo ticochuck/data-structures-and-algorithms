@@ -13,4 +13,4 @@ I sliced the original array into a new array starting at the last index:
 ```
 new_arr = arr[::-1]
 ```
-![](./challenges/assets/reverse_array.png)
+![](./challenges/assets/array-reverse.png)
