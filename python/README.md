@@ -2,6 +2,8 @@
 
 ## Language: `Python`
 
+
+
 # Reverse an Array
 Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
@@ -14,3 +16,19 @@ I sliced the original array into a new array starting at the last index:
 new_arr = arr[::-1]
 ```
 ![](./challenges/assets/array-reverse.png)
+
+# Shift into an Array
+Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
+
+## Approach & Efficiency
+Find the middle of the array, insert the integer. 
+
+## Solution
+I wasn't sure if I could use len to determine the length of the array so I loop through the array and counted the length with a variable called count. 
+
+Once I had the length, I divided by 2 to get the middle point (+1 for odd arrays). Then I used sliced the array from the begining until the middle, and from the middle until the end and concatenated the integer in between. 
+
+```
+new_arr = arr[::-1]
+```
+![](./challenges/assets/array_shift.png)
