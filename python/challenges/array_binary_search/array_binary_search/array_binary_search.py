@@ -18,11 +18,11 @@ def BinarySearch(arr, n):
         count += 1
 
 arr1 = [4,8,15,16,23,42]
-key = 15
+key = 23
 arr2 = [11,22,33,44,55,66,77]
 key2 = 90
-print(BinarySearch(arr1, key))
-print(BinarySearch(arr2, key2))
+#print(BinarySearch(arr1, key))
+#print(BinarySearch(arr2, key2))
 
 #recursive
 def BinarySearch2(arr, n):
@@ -32,22 +32,23 @@ def BinarySearch2(arr, n):
         arr ([list]): [description]
         n ([integer]): [description]
     """
-    middle = len(arr) // 2
-    #print(middle)
-    print(f"n is {n} and arr middle is {arr[middle]}")
-    if n == arr[middle]:
-        return n
-    elif arr == []:
-        return -1
-    elif n < arr[middle]:
-        arr = arr[:middle]
-        print(arr[0])
-        BinarySearch2(arr, n)
-    elif n > arr[middle]:
-        arr = arr[middle+1:]
-        print(arr)
-        BinarySearch2(arr, n)
+    
+    first = 0
+    last = len(arr) - 1
+    
+    while first <= last:
+    
+        middle = (first + last) //2
+        if n == arr[middle]:
+            return middle
+        elif n < arr[middle]:
+            last = middle - 1
+        elif n > arr[middle]:
+            first = middle + 1
+        else:
+            break
+    return -1
         
 
-#print(BinarySearch2(arr1, key))
-#print(BinarySearch2(arr2, key2))
+print(BinarySearch2(arr1, key))
+print(BinarySearch2(arr2, key2))
