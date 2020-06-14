@@ -22,3 +22,25 @@ def test_node_exist():
 def test_LinkedList_exist():
     assert LinkedList
 
+def test_empty_list():
+    ll = LinkedList()
+    assert ll
+
+def test_insert_to_empty_list():
+    ll = LinkedList()
+    ll.insert('Sunday')
+    assert ll.head.value == 'Sunday'
+
+def test_insert_multiple_to_empty_list():
+    ll = LinkedList()
+    ll.insert('Tuesday')
+    ll.insert('Monday')
+    ll.insert('Sunday')
+    assert ll.head.value == 'Sunday'
+
+def test_next_node_value():
+    ll = LinkedList()
+    ll.insert('Tuesday')
+    ll.insert('Monday')
+    ll.insert('Sunday')
+    assert ll.head.next_node.value == 'Monday'
