@@ -45,7 +45,6 @@ class LinkedList:
     def insert(self, value):
         """
         Method to insert a node to the LinkedList.
-        Value is set to none for the fisrt node of the LinkedList
         """
         
         node = Node(value)
@@ -54,10 +53,21 @@ class LinkedList:
             node.next_node = self.head
         self.head = node
 
+    def includes(self, value):
+        """
+        Method to check in a Linked List includes a value.
+        """
 
+        current = self.head
+
+        while current is not None:
+            if current.value == value:
+                return True
+            current = current.next_node
+        
+        return False
 
 ll = LinkedList()
-#print(ll)
 
 ll.insert('Saturday')
 ll.insert('Friday')
@@ -68,3 +78,8 @@ ll.insert('Monday')
 ll.insert('Sunday')
 
 print(ll.head)
+
+print(ll.includes('Saturday'))
+print(ll.includes('November'))
+
+print(Node(ll))
