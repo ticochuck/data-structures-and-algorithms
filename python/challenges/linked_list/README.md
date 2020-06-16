@@ -1,6 +1,6 @@
 # Linked Lins
 
-[Link to Latest PR](https://github.com/ticochuck/data-structures-and-algorithms/pull/43)
+[Link to Latest PR](https://github.com/ticochuck/data-structures-and-algorithms/pull/46)
 
 ## Description
 

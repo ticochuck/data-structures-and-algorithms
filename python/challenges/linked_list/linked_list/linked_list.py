@@ -31,10 +31,9 @@ class LinkedList:
         """
         This is to initializa the LinkedList
         """
-
         self.head = None
-
     
+
     def __str__(self):
         """
         prints LinkedList 
@@ -46,13 +45,13 @@ class LinkedList:
         """
         Method to insert a node to the LinkedList.
         """
-        
         node = Node(value)
         
         if self.head is not None:
             node.next_node = self.head
         self.head = node
 
+    
     def includes(self, value):
         """
         Method to check in a Linked List includes a value.
@@ -66,6 +65,22 @@ class LinkedList:
             current = current.next_node
         
         return False
+    
+    def append(self, value):
+        """
+        Appends a new node to the end of a Linked List
+        """
+        node = Node(value)
+
+        if self.head is Node:
+            self.head = node
+            return
+
+        current = self.head
+
+        while current.next_node is not None:
+            current = current.next_node
+        current.next_node = node
 
 ll = LinkedList()
 
@@ -76,6 +91,10 @@ ll.insert('Wednesday')
 ll.insert('Tuesday')
 ll.insert('Monday')
 ll.insert('Sunday')
+
+ll.append('March')
+ll.append('February')
+ll.append('January')
 
 print(ll.head)
 
