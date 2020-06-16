@@ -56,7 +56,6 @@ class LinkedList:
         """
         Method to check in a Linked List includes a value.
         """
-
         current = self.head
 
         while current is not None:
@@ -72,7 +71,7 @@ class LinkedList:
         """
         node = Node(value)
 
-        if self.head is Node:
+        if self.head is None:
             self.head = node
             return
 
@@ -82,23 +81,97 @@ class LinkedList:
             current = current.next_node
         current.next_node = node
 
+    def insert_before(self, value, new_value):
+        """
+        Inserts a new node before a given node value
+        """
+
+        node = Node(new_value)
+
+        if self.head is None:
+            self.head = node
+            return
+        
+        current = self.head
+
+        while current.next_node is not None:
+            if current.next_node.value == value:
+                
+                node.next_node = current.next_node
+                current.next_node = node
+                return
+            current = current.next_node
+        
+
+    def insert_after(self, value, new_value):
+        """
+        Inserts a new node after a given node value
+        """
+    
+        node = Node(new_value)
+
+        if self.head is None:
+            self.head = node
+            return
+        
+        current = self.head
+        
+        while current.next_node is not None:
+            if current.next_node == 'March':
+                current.next_node = node
+                current = node
+            
+            current = current.next_node
+    
+
+    def kth_from_end(self, k):
+        """
+        Returns the nth value of the Linkedlist starting from the end
+        """
+        current = self.head
+        count = 0
+        while current.next_node is not None:
+            count += 1
+            current = current.next_node
+        index = count - k
+        count2 = 0
+        current = self.head
+        if index < 0:
+            return 'Exemption'
+        else:
+            while current.next_node is not None:
+                if count2 == index:
+                    return print(current.value)
+                count2 += 1
+                current = current.next_node
+            
+
+
 ll = LinkedList()
+ll.insert(2)
+ll.insert(3)
+ll.insert(1)
 
-ll.insert('Saturday')
-ll.insert('Friday')
-ll.insert('Thursday')
-ll.insert('Wednesday')
-ll.insert('Tuesday')
-ll.insert('Monday')
-ll.insert('Sunday')
 
-ll.append('March')
-ll.append('February')
-ll.append('January')
+# ll.insert('Saturday')
+# ll.insert('Friday')
+# ll.insert('Thursday')
+# ll.insert('Wednesday')
+# ll.insert('Tuesday')
+# ll.insert('Monday')
+# ll.insert('Sunday')
+
+# ll.append('March')
+# ll.append('February')
+# ll.append('January')
+
+# ll.insert_before('March', 'Hola')
+ll.insert_before(1, 5)
 
 print(ll.head)
 
-print(ll.includes('Saturday'))
+print(ll.includes(3))
 print(ll.includes('November'))
 
 print(Node(ll))
+print(ll.kth_from_end(0))
