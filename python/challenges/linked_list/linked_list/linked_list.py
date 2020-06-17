@@ -91,15 +91,21 @@ class LinkedList:
         if self.head is None:
             self.head = node
             return
-        
-        current = self.head
 
-        while current.next_node is not None:
+        current = self.head
+        
+        if current.value == value:
+            node.next_node = current
+            self.head = node
+            return
+
+        while current.next_node:
             if current.next_node.value == value:
-                
                 node.next_node = current.next_node
                 current.next_node = node
                 return
+            else:
+                return print(f'Node with value of {value} does not exist')
             current = current.next_node
         
 
@@ -115,12 +121,14 @@ class LinkedList:
             return
         
         current = self.head
-        
-        while current.next_node is not None:
-            if current.next_node == 'March':
+                
+        while current:
+            if current.value == value:
+                node.next_node = current.next_node
                 current.next_node = node
-                current = node
-            
+                return
+            if current.next_node == None:
+                return print(f'Node with value of {value} does not exist')
             current = current.next_node
     
 
@@ -166,12 +174,11 @@ ll.insert(1)
 # ll.append('January')
 
 # ll.insert_before('March', 'Hola')
-ll.insert_before(1, 5)
-
+ll.insert_before(3,5)
+#ll.insert_after(4,5)
 print(ll.head)
-
 print(ll.includes(3))
 print(ll.includes('November'))
 
-print(Node(ll))
-print(ll.kth_from_end(0))
+#print(Node(ll))
+#print(ll.kth_from_end(0))

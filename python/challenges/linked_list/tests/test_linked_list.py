@@ -46,5 +46,13 @@ def test_includes_value_false():
     expected = False
     assert actual == expected
 
+def test_insert_before():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(1)
+    actual = ll.insert_before(3, 5)
+    expected = '1, Next_Node=5, Next_Node=3, Next_Node=2, Next_Node=None'
+    assert actual == expected
 
 

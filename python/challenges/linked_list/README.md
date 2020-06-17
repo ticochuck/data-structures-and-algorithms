@@ -1,16 +1,40 @@
 # Linked List
 
-## White Board 
+### Code Challenge #7
+Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+k-th value from the end of a linked list.
 
-- ### Code Challenge #7
+### White Board 
 
 ![](../../challenges/assets/kvalue.png)
 
-- ### Code Challenge #6
+### Tests 
+1. Where k is greater than the length of the linked list
+2. Where k and the length of the list are the same
+3. Where k is not a positive integer
+4. Where the linked list is of a size 1
+5. “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+
+### Code Challenge #6
+
+Write the following methods for the Linked List class:
+
+- .append(value) which adds a new node with the given value to the end of the list
+- .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+- .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
+### White Board
 
 ![](../../challenges/assets/appendtotheend_LL.png)
 
+### Tests
 
+1. Can successfully add a node to the end of the linked list
+2. Can successfully add multiple nodes to the end of a linked list
+3. Can successfully insert a node before a node located i the middle of a linked list
+4. Can successfully insert a node before the first node of a linked list
+5. Can successfully insert after a node in the middle of the linked list
+6. Can successfully insert a node after the last node of the linked list
 
 ## Code Challenge #5 
 
