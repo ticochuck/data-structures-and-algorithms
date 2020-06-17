@@ -1,4 +1,16 @@
-# Linked Lins
+# Linked List
+
+## White Board 
+
+### Code Challenge #6
+
+![](./challenges/assets/appendtotheend_LL.png)
+
+
+
+
+
+## Code Challenge #5 
 
 [Link to Latest PR](https://github.com/ticochuck/data-structures-and-algorithms/pull/46)
 
