@@ -2,10 +2,26 @@
 
 ## Language: `Python`
 
-# Code Challenge 03 
+# Code Challenges Table of Contents
+
+
+## Code Challenge 07
+k-th value from the end of a linked list
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/tree/master/python/challenges/linked_list)
+
+## Code Challenge 06
+append, insert before, insert after
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/tree/master/python/challenges/linked_list)
+
+## Code Challenge 05
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/tree/master/python/challenges/linked_list)
+
+## Code Challenge 03 
 [Click here to view the README.md](/challenges/array_binary_search/README.md)
 
-# Reverse an Array
+## Reverse an Array
 Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
 ## Approach & Efficiency
