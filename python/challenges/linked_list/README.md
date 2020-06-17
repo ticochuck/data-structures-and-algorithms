@@ -2,11 +2,13 @@
 
 ## White Board 
 
-### Code Challenge #6
+- ### Code Challenge #7
 
-![](./challenges/assets/appendtotheend_LL.png)
+![](../../challenges/assets/kvalue.png)
 
+- ### Code Challenge #6
 
+![](../../challenges/assets/appendtotheend_LL.png)
 
 
 
