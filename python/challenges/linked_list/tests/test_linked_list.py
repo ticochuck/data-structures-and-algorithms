@@ -46,5 +46,71 @@ def test_includes_value_false():
     expected = False
     assert actual == expected
 
+# def test_insert_before():
+#     ll = LinkedList()
+#     ll.insert(2)
+#     ll.insert(3)
+#     ll.insert(1)
+#     actual = ll.insert_before(3, 5)
+#     expected = '1, Next_Node=5, Next_Node=3, Next_Node=2, Next_Node=None'
+#     assert actual == expected
 
 
+def test_insert_before_exception():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(1)
+    actual = ll.insert_before(4, 5)
+    expected = 'Node with value of 4 does not exist'
+    assert actual == expected
+
+
+# def test_insert_after():
+#     ll = LinkedList()
+#     ll.insert(2)
+#     ll.insert(3)
+#     ll.insert(1)
+#     actual = ll.insert_before(3, 5)
+#     expected = '1, Next_Node=3, Next_Node=5, Next_Node=2, Next_Node=None'
+#     assert actual == expected
+
+def test_insert_after_exception():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(1)
+    actual = ll.insert_before(6, 5)
+    expected = 'Node with value of 6 does not exist'
+    assert actual == expected
+
+def test_kth_value():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(8)
+    ll.insert(3)
+    ll.insert(1)
+    actual = ll.kth_value(2)
+    expected = 3
+    assert actual == expected
+
+
+def test_kth_value_with_0():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(8)
+    ll.insert(3)
+    ll.insert(1)
+    actual = ll.kth_value(0)
+    expected = 2
+    assert actual == expected
+
+def test_kth_value_exception():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(8)
+    ll.insert(3)
+    ll.insert(1)
+    actual = ll.kth_value(6)
+    expected = "Exception"
+    assert actual == expected
