@@ -46,16 +46,49 @@ def test_includes_value_false():
     expected = False
     assert actual == expected
 
-# def test_insert_before():
-#     ll = LinkedList()
-#     ll.insert(2)
-#     ll.insert(3)
-#     ll.insert(1)
-#     actual = ll.insert_before(3, 5)
-#     expected = '1, Next_Node=5, Next_Node=3, Next_Node=2, Next_Node=None'
-#     assert actual == expected
+def test_append():
+    ll3 = LinkedList()
+    ll3.insert(4)
+    ll3.insert(3)
+    ll3.insert(2)
+    ll3.insert(1)
+    ll3.append(5)
+    actual = str(ll3)
+    expected = "head: 1, Next_Node=2, Next_Node=3, Next_Node=4, Next_Node=5, Next_Node=None"
+    
+
+def test_insert_before_strings():
+    ll2 = LinkedList()
+    ll2.insert('Bye')
+    ll2.insert('Hola')
+    ll2.insert('Hi')
+    ll2.insert_before('Hola', 'Adios')
+    actual = str(ll2)
+    expected = "head: Hi, Next_Node=Adios, Next_Node=Hola, Next_Node=Bye, Next_Node=None"
+    assert actual == expected
+
+def test_insert_before_head():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(1)
+    ll.insert_before(1, 5)
+    actual = str(ll)
+    expected = "head: 5, Next_Node=1, Next_Node=3, Next_Node=2, Next_Node=None"
+    assert actual == expected
 
 
+def test_insert_before():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(1)
+    ll.insert_before(3, 5)
+    actual = str(ll)
+    expected = "head: 1, Next_Node=5, Next_Node=3, Next_Node=2, Next_Node=None"
+    assert actual == expected
+    
+    
 def test_insert_before_exception():
     ll = LinkedList()
     ll.insert(2)
@@ -66,14 +99,26 @@ def test_insert_before_exception():
     assert actual == expected
 
 
-# def test_insert_after():
-#     ll = LinkedList()
-#     ll.insert(2)
-#     ll.insert(3)
-#     ll.insert(1)
-#     actual = ll.insert_before(3, 5)
-#     expected = '1, Next_Node=3, Next_Node=5, Next_Node=2, Next_Node=None'
-#     assert actual == expected
+def test_insert_after():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(1)
+    ll.insert_after(3, 5)
+    actual = str(ll)
+    expected = "head: 1, Next_Node=3, Next_Node=5, Next_Node=2, Next_Node=None"
+    assert actual == expected
+
+
+def test_insert_after():
+    ll = LinkedList()
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(1)
+    ll.insert_after(2, 5)
+    actual = str(ll)
+    expected = "head: 1, Next_Node=3, Next_Node=2, Next_Node=5, Next_Node=None"
+    assert actual == expected
 
 def test_insert_after_exception():
     ll = LinkedList()
