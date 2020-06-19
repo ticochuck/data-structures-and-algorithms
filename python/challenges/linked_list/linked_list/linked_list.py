@@ -80,6 +80,8 @@ class LinkedList:
         while current.next_node is not None:
             current = current.next_node
         current.next_node = node
+        
+        return node
 
     def insert_before(self, value, new_value):
         """
@@ -90,20 +92,20 @@ class LinkedList:
 
         if self.head is None:
             self.head = node
-            return
+            return 
 
         current = self.head
         
         if current.value == value:
             node.next_node = current
             self.head = node
-            return
+            return node
 
         while current.next_node:
             if current.next_node.value == value:
                 node.next_node = current.next_node
                 current.next_node = node
-                return
+                return node
             else:
                 return (f'Node with value of {value} does not exist')
             current = current.next_node
@@ -126,7 +128,7 @@ class LinkedList:
             if current.value == value:
                 node.next_node = current.next_node
                 current.next_node = node
-                return
+                return node
             if current.next_node == None:
                 return (f'Node with value of {value} does not exist')
             current = current.next_node
@@ -165,9 +167,9 @@ ll.insert(3)
 ll.insert(1)
 
 
-#ll.insert_before(4,5)
-ll.insert_after(4,5)
-print(ll.kth_value(6))
+ll.insert_before(3,5)
+#ll.insert_after(4,5)
+#print(ll.kth_value(6))
 print(ll.head)
 print(ll.includes(3))
 print(ll.includes('November'))
