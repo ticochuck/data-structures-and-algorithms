@@ -5,6 +5,9 @@ def test_version():
     assert __version__ == '0.1.0'
 
 
+def test_merge_exist():
+    assert merge_list()
+
 def test_node_exist():
     assert Node
 
