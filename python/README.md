@@ -4,6 +4,10 @@
 
 # Code Challenges Table of Contents
 
+## Code Challenge 08
+Zip 2 lists, alternate value
+
+[README.md](https://github.com/ticochuck/ll-merge/blob/master/README.md)
 
 ## Code Challenge 07
 k-th value from the end of a linked list
