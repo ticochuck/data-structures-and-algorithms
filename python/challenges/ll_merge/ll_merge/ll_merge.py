@@ -1,4 +1,5 @@
-from challenges.linked_list.linked_list.linked_list import LinkedList, Node
+from challenges.linked_list.linked_list.linked_list import *
+
 
 @staticmethod
     def merge_lists(ll1, ll2):
