@@ -187,6 +187,23 @@ class LinkedList:
                 current1, current2 = tmp1, tmp2
         return ll1.head
 
+
+        # Removed extra 2 if statements 
+        # # Check if any of the given lists is empty
+        # if not ll1.head:
+        #     return ll2.head
+        # elif not ll2.head:
+        #     return ll1.head
+        # # Assign current pointers
+        # curr1, curr2 = ll1.head, ll2.head
+        # # Move .next pointers while both lists exist
+        # while curr1 and curr2:
+        #     tmp1, curr1.next = curr1.next, curr2
+        #     if tmp1:
+        #         tmp2, curr2.next = curr2.next, tmp1
+        #     curr1, curr2 = tmp1, tmp2
+        # return ll1.head
+
 ll = LinkedList()
 ll.insert(2)
 ll.insert(8)
