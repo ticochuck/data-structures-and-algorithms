@@ -4,10 +4,15 @@
 
 # Code Challenges Table of Contents
 
+## Code Challenge 10
+Stack and a Queue Implementation
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/stack-and-queue/python/challenges/stacks_and_queues/README.md)
+
 ## Code Challenge 08
 Zip 2 lists, alternate value
 
-[README.md](https://github.com/ticochuck/ll-merge/blob/master/README.md)
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/master/python/challenges/ll_merge/README.md)
 
 ## Code Challenge 07
 k-th value from the end of a linked list
