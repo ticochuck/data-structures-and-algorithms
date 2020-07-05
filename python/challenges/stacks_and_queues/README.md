@@ -3,7 +3,7 @@ Create a Stack and Queue classes and their methods to push/add nodes to the top 
 
 ## White Board
 
-![](../../challenges/assets/stackAndqueues.png)
+![](./../../challenges/assets/stackAndqueues.png)
 
 ## Tests
 

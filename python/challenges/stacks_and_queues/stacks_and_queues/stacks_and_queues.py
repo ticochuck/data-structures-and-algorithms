@@ -26,10 +26,13 @@ class Stack:
         Removes the node from the top of the stack. 
         Returns the node’s value.
         """
-        temp = self.top
-        self.top = self.top.next
-        temp.next = None
-        return temp.value
+        if self.top:
+            temp = self.top
+            self.top = self.top.next
+            temp.next = None
+            return temp.value
+        else:
+            raise AttributeError('The stack is Empty')
 
 
     def peek(self):
@@ -73,14 +76,26 @@ class Queue:
             self.rear = new_node
         else:
             self.front = new_node
+            self.rear = new_node
 
+    
     def dequeue(self):
         """
         Removes the node from the front of the queue.
         Returns the node’s value.
         It raises an exception when called on empty queue.
         """
-        pass
+        if self.front:
+            temp = self.front
+            if self.front.next == None:
+                self.front = None
+                self.rear = None
+            else:
+                self.front = self.front.next
+            temp.next = None
+            return temp.value
+        else:
+            raise AttributeError('The queue is Empty')
 
 
     def peek(self):
@@ -88,10 +103,19 @@ class Queue:
         Returns the value of the node located in the front of the queue.
         It raises an exception when called on empty queue
         """
-        pass
+        if self.front:
+            return self.front.value
+        else:
+            raise AttributeError('The queue is Empty')
 
     def is_empty(self):
         """
         Returns a boolean indicating whether or not the queue is empty
         """
-        pass
+        if self.front:
+            return False
+        else:
+            return True
+
+#q = Queue()
+#q.peek()
