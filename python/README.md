@@ -4,6 +4,11 @@
 
 # Code Challenges Table of Contents
 
+## Code Challenge 11
+Implementation of a Queue using two Stacks
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/stack-and-queue/python/challenges/queue_with_stacks/README.md)
+
 ## Code Challenge 10
 Stack and a Queue Implementation
 
