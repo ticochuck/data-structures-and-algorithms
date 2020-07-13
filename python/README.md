@@ -4,7 +4,10 @@
 
 # Code Challenges Table of Contents
 
+## Code Challenge 13
+Multi Bracket Validation
 
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/multi-bracket-validation/README.md)
 
 ## Code Challenge 12
 Implementation of a Queue using two Stacks
