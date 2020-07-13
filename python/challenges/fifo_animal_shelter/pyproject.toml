@@ -1,12 +1,11 @@
 [tool.poetry]
-name = "stacks_and_queues"
+name = "fifo_animal_shelter"
 version = "0.1.0"
 description = ""
 authors = ["ticochuck <chucklivilla@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pytest-watch = "^4.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
