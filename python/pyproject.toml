@@ -1,12 +1,11 @@
 [tool.poetry]
-name = "linked_list"
+name = "python"
 version = "0.1.0"
 description = ""
 authors = ["ticochuck <chucklivilla@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-ptw = "^1.0.0"
 pytest-watch = "^4.2.0"
 
 [tool.poetry.dev-dependencies]
