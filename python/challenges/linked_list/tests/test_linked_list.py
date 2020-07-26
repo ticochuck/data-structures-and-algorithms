@@ -5,9 +5,6 @@ def test_version():
     assert __version__ == '0.1.0'
 
 
-def test_merge_exist():
-    assert merge_list()
-
 def test_node_exist():
     assert Node
 
@@ -58,6 +55,7 @@ def test_append():
     ll3.append(5)
     actual = str(ll3)
     expected = "head: 1, Next_Node=2, Next_Node=3, Next_Node=4, Next_Node=5, Next_Node=None"
+    assert actual == expected
     
 
 def test_insert_before_strings():
@@ -113,7 +111,7 @@ def test_insert_after():
     assert actual == expected
 
 
-def test_insert_after():
+def test_insert_after_2():
     ll = LinkedList()
     ll.insert(2)
     ll.insert(3)
