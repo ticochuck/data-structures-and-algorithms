@@ -106,9 +106,19 @@ class BinarySearchTree(BinaryTree):
         walk(self.root, new_node)
 
     
-    def contains(node, node_to_check):
-        pass
+    def contains(self, value):
+        """
+        Takes in a value, checks if the BST contians the value. 
+        Returns True if it does, False if it doesn't
+        """
+        def walk(node, node_to_check):
 
+            if node_to_check.value == node.value:
+                return True
+            else:
+                return False
+
+            walk(self.root, value)
 
 bst = BinarySearchTree()
 bst.add(4)
@@ -118,11 +128,11 @@ bst.add(9)
 bst.add(2)
 bst.add(30)
 bst.add(-1)
-
+bst.contains(9)
 
 bst.pre_order()
 bst.in_order()
 bst.post_order()
 
 
--1 2 5 30 9 7 4 
+# -1 2 5 30 9 7 4 
