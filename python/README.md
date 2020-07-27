@@ -4,6 +4,11 @@
 
 # Code Challenges Table of Contents
 
+## Code Challenge 15
+Trees
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/tree/README.md)
+
 ## Code Challenge 13
 Multi Bracket Validation
 
