@@ -82,7 +82,6 @@ class BinarySearchTree(BinaryTree):
         Add a node to the Binary Tree
         """
         def walk(node, node_to_add):
-
             if not node:
                 return
 
@@ -111,28 +110,32 @@ class BinarySearchTree(BinaryTree):
         Takes in a value, checks if the BST contians the value. 
         Returns True if it does, False if it doesn't
         """
-        def walk(node, node_to_check):
-
-            if node_to_check.value == node.value:
-                return True
+        def search(node):
+            if node:
+                if node.value == value:
+                    return True
+        
+                if node.value < value: 
+                    return search(node.right) 
+                if node.value > value: 
+                    return search(node.left) 
             else:
                 return False
+            
+        return search(self.root)
 
-            walk(self.root, value)
-
+        
 bst = BinarySearchTree()
-bst.add(4)
-bst.add(7)
-bst.add(5)
-bst.add(9)
-bst.add(2)
-bst.add(30)
+bst.add(10)
+bst.add(8)
+bst.add(17)
+bst.add(23)
+bst.add(3)
 bst.add(-1)
-bst.contains(9)
+bst.add(50)
+bst.add(34)
+print(bst.contains(-10))
 
 bst.pre_order()
 bst.in_order()
 bst.post_order()
-
-
-# -1 2 5 30 9 7 4 
