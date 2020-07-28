@@ -7,6 +7,7 @@ class Node:
         self.left = left
         self.right = right
 
+ 
 class BinaryTree:
     def __init__(self):
         self.root = None
@@ -73,7 +74,28 @@ class BinaryTree:
         print('Post-order: ', output)
         return output
 
+# I used this for reference: 
+# https://codereview.stackexchange.com/questions/191984/perform-bfs-on-a-binary-tree
+    def breadth_first(self):
+        
+        output = []
+        
+        queue = []
+        queue.append(self.root)
+        
+        while queue:
+            node = queue.pop(0)
+            output.append(node.value)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+            if not queue:
+                break
 
+        print('Breadth first: ', output)
+        return output
+        
 
 class BinarySearchTree(BinaryTree):
     
@@ -146,8 +168,6 @@ class BinarySearchTree(BinaryTree):
         # traverse(self.root)
         # return highest_value
 
-        
-
        
 bst = BinarySearchTree()
 bst.add(10)
@@ -160,6 +180,23 @@ bst.add(50)
 bst.add(34)
 print(bst.contains(-1))
 print('highest value is: ', bst.max_value())
+
 bst.pre_order()
 bst.in_order()
 bst.post_order()
+bst.breadth_first()
+
+bt = BinaryTree()
+root = Node(2)
+root.left = Node(7)
+root.right = Node(5)
+root.left.left = Node(2)
+root.left.right = Node(6)
+root.right.right = Node(9)
+root.left.right.left = Node(5)
+root.left.right.right = Node(11)
+root.right.right.left = Node(4)
+bt.root = root
+bt.breadth_first()
+
+#assert tree.breadth_first() == [2,7,5,2,6,9,5,11,4]
