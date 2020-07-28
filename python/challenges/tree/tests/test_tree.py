@@ -66,6 +66,19 @@ def test_traverse_inorder():
     bst.add(34)
     assert bst.in_order() == [-1, 3, 8, 10, 17, 23, 34, 50]
 
+def test_traverse_inorder2():
+    bst = BinarySearchTree()
+    bst.add(2)
+    bst.add(7)
+    bst.add(5)
+    bst.add(2)
+    bst.add(6)
+    bst.add(9)
+    bst.add(5)
+    bst.add(11)
+    bst.add(4)
+    assert bst.in_order() == [2, 2, 4, 5, 5, 6, 7, 9, 11]
+
 
 # Can successfully return a collection from a postorder traversal
 def test_traverse_postorder():
@@ -79,3 +92,19 @@ def test_traverse_postorder():
     bst.add(50)
     bst.add(34)
     assert bst.post_order() == [-1, 3, 8, 34, 50, 23, 17, 10]
+    assert bst.max_value() == 50
+
+
+def test_max_value():
+    bst = BinarySearchTree()
+    bst.add(2)
+    bst.add(7)
+    bst.add(5)
+    bst.add(2)
+    bst.add(6)
+    bst.add(9)
+    bst.add(5)
+    bst.add(11)
+    bst.add(4)
+    assert bst.max_value() == 11
+
