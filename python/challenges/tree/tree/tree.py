@@ -148,27 +148,20 @@ class BinarySearchTree(BinaryTree):
 
 
     def max_value(self):
+        value = self.root.value
+        def highest(node, value=0):
         
-        highest = self.in_order()[-1]
-        
-        return highest
-        
-        # highest_value = self.root.value
-
-        # def traverse(node):
-                
-        #     if node:
-        #         if highest_value < node.value:
-        #             highest_value =  node.value
-            
-        #         traverse(node.left, highest_value)
-        #         traverse(node.right, highest_value)
-        #         return highest_value
-        
-        # traverse(self.root)
-        # return highest_value
-
-       
+            if node:
+                if node.value > value:
+                    value = node.value
+                highest(node.left, value)
+                return highest(node.right, value)
+            else:
+                return value
+    
+        return highest(self.root, value)
+    
+               
 bst = BinarySearchTree()
 bst.add(10)
 bst.add(8)
@@ -179,7 +172,7 @@ bst.add(-1)
 bst.add(50)
 bst.add(34)
 print(bst.contains(-1))
-print('highest value is: ', bst.max_value())
+print(bst.max_value())
 
 bst.pre_order()
 bst.in_order()
@@ -199,4 +192,3 @@ root.right.right.left = Node(4)
 bt.root = root
 bt.breadth_first()
 
-#assert tree.breadth_first() == [2,7,5,2,6,9,5,11,4]
