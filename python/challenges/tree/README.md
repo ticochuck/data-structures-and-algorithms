@@ -19,8 +19,11 @@ Define a method named add that accepts a value, and adds a new node with that va
 
 ## White Board
 
+Code Challenge 16
 ![](./../../challenges/assets/tree_find_max_value.png)
 
+Code Challenge 17
+![](./../../challenges/assets/breadth_first.png)
 ## Tests
 
 - Can successfully instantiate an empty tree
