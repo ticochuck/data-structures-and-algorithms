@@ -4,6 +4,21 @@
 
 # Code Challenges Table of Contents
 
+## Code Challenge 18
+Fizzbuzz - Trees
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/fizz-buzz-tree/README.md)
+
+## Code Challenge 17
+Trees - Breadth First
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/tree/README.md)
+
+## Code Challenge 16
+Trees - Max Value
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/tree/README.md)
+
 ## Code Challenge 15
 Trees
 
