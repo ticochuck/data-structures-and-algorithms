@@ -72,3 +72,6 @@ We move to the next index. In this case, 16 is smaller than 42. We enter the whi
 We move to the next index. This is a similar case as the previous step. In this case, 15 is smaller than 42. We enter the while loop and we move 42 one position to the right. Since 15 is also smaller than 23, we move 23 one position to the right. Then 15 is also smaller than 16, so we move 16 one position to the right. Then we insert 15 in the position 2 of the array
 
 ![](./img/insertion5.png)
+
+
+Since the lenght of the array is 5, the for loop will be completed. The function will return the sorted array. 
