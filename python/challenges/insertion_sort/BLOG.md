@@ -37,7 +37,7 @@ returns [4,8,15,16,23,42]
     - j = j - 1
 - Assign temp to arr at position j + 1
 
-## **Step by step solotion**
+## **Step by step solution**
 
 We are going to sort an array using Insertion Sort.
 
