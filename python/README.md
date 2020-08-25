@@ -7,7 +7,7 @@
 ## Code Challenge 18
 Fizzbuzz - Trees
 
-[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/fizz-buzz-tree/README.md)
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/master/python/challenges/fizz_buzz_tree/README.md)
 
 ## Code Challenge 17
 Trees - Breadth First
