@@ -61,7 +61,27 @@ ALGORITHM Merge(left, right, arr)
 
 - call the a helper merge function passing the left, right and original array
 
+The helper function will:
+- declare i as 0
+- declare j as 0
+- declare k as 0
 
+- while i is smaller than the length of left AND j is smaller than the length of right:
+  - if left at position i smaller or equal to right at position j:
+    - assign array at position k the value of 
+    left at position i
+    - i = i + 1
+  
+  - else:
+    - assign array at position k the value of right at position j
+    - j = j + 1
+  
+  - k = k + 1
+
+- if i is equal to len(left):
+  - set remaining entries in arr to remaining values in right
+- else
+  - set remaining entries in arr to remaining values in left
 
 
 ## **Step by step solution**
@@ -72,5 +92,18 @@ Input: arr = [8,4,23,42,16,15]
 
 ### **Step 1**
 
-We first check if the lenght of the array is greater than 1
+First we assigned the value of len(arr) to a variable n
 
+### **Step 2**
+
+if n is greater than 1
+
+- cut the array in half and assign the value to mid
+- assign left to arr[:mid]
+- assign right to arr[mid:]
+
+- use recursive to repeat the same process until n is smaller than 1
+
+- Once the the array is divided into smaller arrays/units, we begin merging the 2 sorted halfs (left and right)
+
+![](./img/merge_sort.png)

@@ -4,7 +4,7 @@ def test_merge_sort():
     assert merge_sort
 
 
-def test_insertion_sort_1():
+def test_merge_sort_1():
     arr = [8,4,23,42,16,15]
     result = merge_sort.merge_sort(arr)
     assert result == [4,8,15,16,23,42]
