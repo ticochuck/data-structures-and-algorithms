@@ -4,6 +4,11 @@
 
 # Code Challenges Table of Contents
 
+## Code Challenge 30
+Hashtables
+
+[README.md](https://github.com/ticochuck/data-structures-and-algorithms/blob/master/python/challenges/hashtable/README.md)
+
 ## Code Challenge 18
 Fizzbuzz - Trees
 
