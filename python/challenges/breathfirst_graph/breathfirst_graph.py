@@ -73,7 +73,13 @@ class Graph:
     def breathfirst_graph(self, vertex):
         
         output = []
-        output.append(vertex)
+
+        vertices = self.get_neighbours(vertex)
+
+        for item in vertices:
+            output.append(item[0])
+        
+        
         return output
 
 
@@ -100,7 +106,7 @@ if __name__ == "__main__":
     trip.add_edge(city1, city6, 22)
     trip.add_edge(city6, city1, 23)
 
-    print(trip.get_vertices())
+    # print(trip.get_vertices())
     # print(trip.get_neighbours(city6))
     # print(trip.size())
 
